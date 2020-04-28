@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <div class="container text-center py-5">
+        <h2 id="titulo"> Practica While</h2>
+        <div class="py-4">
+            <input type="number" id="numCli" class="form-control text-center" placeholder="Pruebale...">
+        </div>
+        <button id="bton" class="btn btn-success">Enviar</button>
+        <div id="result" class="py-4"></div>
+    </div>
+
+    <script>
+     document.getElementById('bton').onclick=function(){
+                document.getElementById('result').innerHTML = '';//Limpiamos pantalla
+                var usuario=document.getElementById('numCli').value;
+                var contador = 1;
+                var numero_2 = 5;
+                var detener = false;
+
+                while(contador<=usuario && detener == false){
+
+                    if (usuario==numero_2){
+                          document.getElementById('result').innerHTML = '¡GANASTE! <br>';
+                          document.getElementById("numCli").value = "";
+                          detener = true;
+                    }
+                    else{
+                        document.getElementById('result').innerHTML += 'Eres un looser x:' + contador + '</br>';
+                        document.getElementById("numCli").value = "";
+                        contador++;
+                    }
+                }
+         }
+    </script>
+
+</body>
+</html>
